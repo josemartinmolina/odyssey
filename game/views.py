@@ -41,4 +41,13 @@ def bienvenida(request):
 def multiplicacion(request):
     p = request.GET['p']
     q = request.GET['q']
-    return HttpResponse("Multiplicacion "+p+"x"+q)
+    r = int(p)*int(q)
+    return HttpResponse("La multiplicacion de "+p+"x"+q+ "="+str(r))
+
+@csrf_exempt
+def division(request):
+    body_unicode = request.body.decode('utf-8')
+    body = loads(body_unicode)
+    p = body['p']
+    q = body['q']
+    return HttpResponse("Division"+str(p)+" "+str(q))

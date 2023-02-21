@@ -7,4 +7,5 @@ urlpatterns = [
     path('suma',views.suma,name='suma'),
     path('bienvenida',views.bienvenida,name='bienvenida'),
     path('multiplicacion',views.multiplicacion, name='multiplicacion'),
+    path('division',views.division, name='division'),
 ]
