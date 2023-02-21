@@ -50,4 +50,7 @@ def division(request):
     body = loads(body_unicode)
     p = body['p']
     q = body['q']
-    return HttpResponse("Division"+str(p)+" "+str(q))
+    resultado = Fraccion(p,q)
+    json_resultado = resultado.toJSON()
+    return HttpResponse(json_resultado, \
+        content_type = "text/json-comment-filtered")
